@@ -16,8 +16,8 @@ platform: openshift
 # need to omit this option to run the compliance-operator on other platforms,
 # like EKS, where nodes do not have that role by default (e.g., nodeSelector:
 # null)
-nodeSelector:
-  node-role.kubernetes.io/master: ""
+nodeSelector: ~
+#  node-role.kubernetes.io/master: ""
 
 # By default, only schedule to nodes labeled with the master kubernetes role,
 # which is present in OpenShift deployments. You may need to omit this option

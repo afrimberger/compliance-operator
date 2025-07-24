@@ -28,6 +28,8 @@ tolerations:
     operator: "Exists"
     effect: "NoSchedule"
 
+operatorVersionLabel: 1.7.1
+
 serviceAccounts:
   create: true
   accountNames:

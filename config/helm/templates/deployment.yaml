@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         name: compliance-operator
+        compliance-operator-version-owner: "compliance-operator.{{ .Values.operatorVersionLabel }}"
       annotations:
         workload.openshift.io/management: '{"effect": "PreferredDuringScheduling"}'
     spec:

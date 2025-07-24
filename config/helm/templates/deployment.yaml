@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "compliance-operator-chart.fullname" . }}
+  labels:
+    version-owner: "v{{ .Values.operatorVersionLabel }}"
 spec:
   # FIXME(lbragstad): Make the replica count configurable based on a default
   # value in values.yaml
@@ -13,7 +15,6 @@ spec:
     metadata:
       labels:
         name: compliance-operator
-        version-owner: "v{{ .Values.operatorVersionLabel }}"
       annotations:
         workload.openshift.io/management: '{"effect": "PreferredDuringScheduling"}'
     spec:
